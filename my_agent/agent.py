@@ -14,6 +14,10 @@ from google.adk.sessions import InMemorySessionService
 from google.adk.runners import Runner
 from google.genai.types import Content, Part
 
+print("\n================================================================")
+print("\nThis is an AI agent for the reconnaissance step of a pen test.\nEnter the IP of a organization.\nIt will do a Ping scan using Nmap for the first 5 IPs.\n")
+print("================================================================\n")
+
 load_dotenv()
 
 def extract_ip_range(whois_output: str) -> str:
@@ -68,6 +72,8 @@ async def main():
         sys.exit(1)
 
     domain_name = sys.argv[1]
+
+    
 
     # Create a session service
     session_service = InMemorySessionService()
