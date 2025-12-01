@@ -39,10 +39,12 @@ flowchart TD
 # Instructions for setup
 You need create your API ket at https://aistudio.google.com/app/api-keys
 
-Add your API key to My-agent/.env and run source setup.sh
+Add your API key to my-agent/.env and run source setup.sh
 
-cat my_agent/.env
+`cat my_agent/.env`
+
 GOOGLE_GENAI_USE_VERTEXAI=0
+
 GOOGLE_API_KEY=Axxxxxxxxxxxxxxxxxxxxxxxxxxxx....
 
-source setup.sh
+`source setup.sh`
