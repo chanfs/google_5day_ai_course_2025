@@ -10,9 +10,32 @@ Here I will attempt to create an AI agent to perform the reconnaissance step usi
 AI agents are uniquely suitable for this task as pen testting is a task that requires analysis at each step and the results obtained at each step will affect what we will do at the next step. Agents can tap the analytical and thinking power of a LLM for the task. Agents can also make use of tools to perform the actual steps like port scanning. MCP servers can be and should be developed for pen testting. 
  
 # Architecture
+```mermaid
+flowchart TD
+    A[SequentialAgent]
+
+    subgraph S[Session Service]
+        SS[InMemorySessionService]
+    end
+
+    subgraph W[WHOIS Agent]
+        B[WHOIS Sub-agent]
+        BT[WHOIS Tool]
+        B --> BT
+    end
+
+    subgraph N[Nmap Agent]
+        C[Nmap Sub-agent]
+        CT[Nmap Tool]
+        C --> CT
+    end
+
+    A --> B
+    A --> C
+    A --> SS
+```
+
  
 # Instructions for setup
 It is easy. Just source setup.sh
 source setup.sh
-
-# relevant diagrams or images where appropriate.
